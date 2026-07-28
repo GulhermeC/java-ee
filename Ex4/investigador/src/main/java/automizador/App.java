@@ -32,7 +32,11 @@ public class App
                 //int id = jsonNode.get("id").asInt();
                 String species= jsonNode.get("species").asText();
                 String status = jsonNode.get("status").asText();
+                
+                // JsonNode episodes = jsonNode.path("episode");
                 JsonNode episodes = jsonNode.get("episode");
+                
+                // String episode = episodes.get(episodes.size()-1).asText();
                 List<String> episodeList = mapper.convertValue(episodes, new TypeReference<List<String>>() {});
 
                 //System.out.println("ID: " + id);
