@@ -17,3 +17,9 @@ Modifiquem o código base em grupo para cumprir estes 4 objetivos:
     Alerta de Segurança: Ameaça Alienígena 
     A Citadela precisa de monitorizar riscos biológicos. Se o vosso programa detetar um cidadão que seja da espécie Alien e que esteja Morto, deve imprimir um alerta imediato na consola:
     [PERIGO] Um Alien foi encontrado morto com o ID X!
+
+4. 
+    Se o vosso programa detetar um alien morto, deve iniciar uma investigação após o alerta para descobrir onde ele foi visto pela última vez.
+    Isolem o URL do episódio e façam o Java disparar um segundo pedido HTTP para o URL do episódio que acabaram de descobrir.
+    Extraiam o nome desse episódio e mostrem o veredicto no ecrã com este formato:
+    [ALERTA FORENSE] O último registo do alien morto foi no episódio: '...'.
