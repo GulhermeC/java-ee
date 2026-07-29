@@ -1,0 +1,32 @@
+A - Servlet do Censo 
+ 
+Criar uma servlet que disponibiliza o relatório através do caminho “/census” (contagem de vivos/mortos, alerta de alien morto e análise forense do episódio relativo ao perigo biológico).
+ 
+Devolver o relatório em HTML em vez de escrever na consola.
+ 
+Permitir que o pedido ao servlet defina o intervalo de personagens que devem ser analisados. (?offset=x&limit=y, x=1 e y=20 por defeito)
+ 
+Permitir que o pedido defina se o alerta de ameaça biológica alienígena deve ou não ser gerado. (?showAlerts=true/false, true por defeito)
+ 
+ 
+B - Validação de parâmetros e erros HTTP
+ 
+Nem todos os pedidos do utilizador vão chegar corretos.
+Regras de Validação:
+O parâmetro limit não pode ser negativo nem superior a 50.
+Os parâmetros offset e limit não podem ser texto.
+O parâmetro showAlerts só pode ser true ou false.
+Ação: Em caso de erro de validação, o Servlet deve:
+Definir o código de estado HTTP para 400 Bad Request.
+Retornar um JSON de erro estruturado, por exemplo:
+{
+  "status": 400,
+  "error": "Bad Request",
+  "message": "O parâmetro 'limit' deve ser um número inteiro entre 1 e 50."
+}
+ 
+ 
+C - Desafios Extra
+
+Criar um ficheiro HTML com um formulário para receber os parâmetros offset, limit e showAlerts.
+Criar uma pasta no cliente HTTP Bruno para guardar todos os testes de validação.

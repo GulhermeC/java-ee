@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Census - Rick and Morty</title>
+</head>
+<body>
+    <h1>Census</h1>
+
+    <form action="/census" method="get">
+    
+        <div>
+            <label for="offset">Offset:</label><br>
+            <input type="number" name="offset" id="offset" value="1">
+        </div>
+
+        <div>
+            <label for="limit">Limit:</label><br>
+            <input type="number" name="limit" id="limit" value="20">
+        </div>
+
+        <div class="checkbox-row">
+            <input type="checkbox" value="true" checked>
+            <label for="showAlerts">Mostrar alertas de aliens mortos</label>
+        </div>
+
+        <button type="submit">Consultar Censo</button>
+    </form>
+</body>
+</html>
