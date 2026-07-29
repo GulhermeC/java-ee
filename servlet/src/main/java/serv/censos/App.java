@@ -1,23 +1,27 @@
 package serv.censos;
 
 import java.io.IOException;
-
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.util.List;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 
 @WebServlet("/census")
@@ -136,6 +140,12 @@ public class App extends HttpServlet
                 Thread.sleep(100);
             }
             resp.getWriter().println("<p>CENSO: Detetados " + nAlive + " personagens VIVOS, " + nDead + " personagens MORTOS e " + nUnknown + " personagens DESCONHECIDOS entre os registos " + start + " e " + end + " registos.</p>");
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS");
+            String timestamp = "[" + LocalDateTime.now().format(formatter) + "] ";
+
+            Path path = Path.of("C:/Users/gjscr/OneDrive/Área de Trabalho/Code/Java_form/L_15/java-ee/citadela_audit.log");
+            Files.writeString(path, timestamp + " Census realizados com sucesso.\n", StandardOpenOption.APPEND);
         }
         catch(Exception e) {
             resp.getWriter().println("<p>Exception: " + e.getClass().getName() + " - " + e.getMessage() + "</p>");
