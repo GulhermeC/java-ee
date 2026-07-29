@@ -138,7 +138,6 @@ public class App extends HttpServlet
             resp.getWriter().println("<p>CENSO: Detetados " + nAlive + " personagens VIVOS, " + nDead + " personagens MORTOS e " + nUnknown + " personagens DESCONHECIDOS entre os registos " + start + " e " + end + " registos.</p>");
         }
         catch(Exception e) {
-            //resp.getWriter().println("<p>Exception generica.</p>");
             resp.getWriter().println("<p>Exception: " + e.getClass().getName() + " - " + e.getMessage() + "</p>");
             e.printStackTrace();
         }
