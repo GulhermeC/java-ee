@@ -1,0 +1,4 @@
+127.0.0.1 - - [31/Jul/2026:16:01:32 +0100] "GET /api/personagem HTTP/1.1" 200 12
+127.0.0.1 - - [31/Jul/2026:16:01:52 +0100] "POST /api/personagem?nome=Rick&especie=Human&comidaFavorita=Pizza HTTP/1.1" 201 182
+127.0.0.1 - - [31/Jul/2026:16:02:29 +0100] "GET /api/personagem HTTP/1.1" 200 71
+127.0.0.1 - - [31/Jul/2026:16:02:47 +0100] "POST /api/personagem?nome=Rick&especie=Human&comidaFavorita=Pizza HTTP/1.1" 201 182

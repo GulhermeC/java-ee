@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [31/Jul/2026:13:15:50 +0100] "GET / HTTP/1.1" 200 999
+0:0:0:0:0:0:0:1 - - [31/Jul/2026:13:16:01 +0100] "GET /api/census?offset=150&limit=10&showAlerts=true HTTP/1.1" 200 555
+0:0:0:0:0:0:0:1 - - [31/Jul/2026:13:16:07 +0100] "GET /api/census?offset=150&limit=10&showAlerts=false HTTP/1.1" 200 204
+0:0:0:0:0:0:0:1 - - [31/Jul/2026:13:16:11 +0100] "GET /api/census?offset=150&limit=10&showAlerts=true HTTP/1.1" 200 555
